@@ -1,18 +1,20 @@
+const senderMail = "krishankanhaya0007@gmail.com";
+const appPassword = 'idvhjmtqlacqrajj';
+const subscriberList =
+  "krishan.kanahia@nextbigbox.in chauhansunny7788@gmail.com golo062003@gmail.com";
 const axios = require("axios");
 const fs = require("fs");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
-// const filePath = "example.txt";
 
-setTimeout(async () => {
+setInterval(async () => {
   try {
     const response = await axios.get(
       "https://igu1.ucanapply.com/result-details?sesscode=d84f65a0se16eyjpdii6inllugxsstlrmytbmxr6ykmzyu9rq3c9psisinzhbhvlijoirnv0cmzfu0hyc1hynzd0rhg3c3pedz09iiwibwfjijoiotlhztfhyzk2nzdhntzkmdg2yjhjotu0odc2zjk5n2vkyta2ztq5ymeyy2vkmmzmzdnhmtzjmtg1odg1nzdmyyisinrhzyi6iij9"
     );
     const htmlContent = response.data; 
-    // Result Title
-    // var specificText =
-    //   "BACHELOR OF TECHNOLOGY (COMPUTER SCIENCE &amp; ENGINEERING) (B.Tech (CSE)) (UG)&nbsp;Sixth Semester (Sem - 6)&nbsp;&nbsp;(New Scheme(19-20))";
+    // Result Title -- you see the formatting of your result title by inspecting element in browser
+    // var specificText = "BACHELOR OF TECHNOLOGY (COMPUTER SCIENCE &amp; ENGINEERING) (B.Tech (CSE)) (UG)&nbsp;Sixth Semester (Sem - 6)&nbsp;&nbsp;(New Scheme(19-20))";
     var specificText ="BACHELOR OF ARTS HON. (ENGLISH) (B.A HON. (ENGLISH)) (UG)&nbsp;Fifth Semester (Sem - 5)&nbsp;&nbsp;(2017-18(Old))";
     var index = htmlContent.indexOf(specificText);
     console.log(index)
@@ -39,17 +41,17 @@ setTimeout(async () => {
         port: 587,
         secure: false,
         auth: {
-          user: "krishankanhaya0007@gmail.com",
-          pass: 'idvhjmtqlacqrajj',
+          user: sendMail,
+          pass: appPassword,
         },
       });
 
       const mailOptions = {
         from: {
-          name: "Krishan Kanhaya",
-          address: "krishankanhaya0007@gmail.com",
+          name: "Krishan Kanhaya", // change it with your name
+          address: senderMail,
         },
-        to: 'krishan.kanahia@nextbigbox.in',
+        to: subscriberList,
         subject: `Result Out Now For :  ${specificText}`,
         text: "ram",
         html: `<b>Here is Your Result Link : ${hyperlink} `,
@@ -65,14 +67,14 @@ setTimeout(async () => {
       };
 
       sendMail(transporter, mailOptions);
-      console.log("Your result is out now!");
+      console.log("Your result is out now!"); // for testing 
     } else {
       console.log("No result found!");
     }
   } catch (error) {
     console.error("Error:", error.message);
   }
-}, 1000);
+}, 6000);
 
 
 
