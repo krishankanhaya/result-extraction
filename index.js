@@ -39,17 +39,17 @@ setTimeout(async () => {
         port: 587,
         secure: false,
         auth: {
-          user: process.env.USER,
-          pass: process.env.PASS,
+          user: "krishankanhaya0007@gmail.com",
+          pass: 'idvhjmtqlacqrajj',
         },
       });
 
       const mailOptions = {
         from: {
           name: "Krishan Kanhaya",
-          address: process.env.USER,
+          address: "krishankanhaya0007@gmail.com",
         },
-        to: process.env.RECIEVER,
+        to: 'krishan.kanahia@nextbigbox.in',
         subject: `Result Out Now For :  ${specificText}`,
         text: "ram",
         html: `<b>Here is Your Result Link : ${hyperlink} `,
