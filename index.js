@@ -2,7 +2,6 @@ const senderMail = "krishankanhaya0007@gmail.com";
 const appPassword = 'idvhjmtqlacqrajj';
 const subscriberList = "krishan.kanahia@nextbigbox.in";
 const axios = require("axios");
-const fs = require("fs");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
@@ -13,8 +12,9 @@ setInterval(async () => {
     );
     const htmlContent = response.data; 
     // Result Title -- you see the formatting of your result title by inspecting element in browser
-    // var specificText = "BACHELOR OF TECHNOLOGY (COMPUTER SCIENCE &amp; ENGINEERING) (B.Tech (CSE)) (UG)&nbsp;Sixth Semester (Sem - 6)&nbsp;&nbsp;(New Scheme(19-20))";
-    var specificText ="BACHELOR OF ARTS HON. (ENGLISH) (B.A HON. (ENGLISH)) (UG)&nbsp;Fifth Semester (Sem - 5)&nbsp;&nbsp;(2017-18(Old))";
+    var specificText = "BACHELOR OF TECHNOLOGY (COMPUTER SCIENCE &amp; ENGINEERING) (B.Tech (CSE)) (UG)&nbsp;Sixth Semester (Sem - 6)&nbsp;&nbsp;(New Scheme(19-20))";
+
+    // var specificText ="BACHELOR OF ARTS HON. (ENGLISH) (B.A HON. (ENGLISH)) (UG)&nbsp;Fifth Semester (Sem - 5)&nbsp;&nbsp;(2017-18(Old))";
     var index = htmlContent.indexOf(specificText);
     console.log(index)
     
