@@ -1,7 +1,6 @@
 const senderMail = "krishankanhaya0007@gmail.com";
 const appPassword = 'idvhjmtqlacqrajj';
-const subscriberList =
-  ["krishan.kanahia@nextbigbox.in, chauhansunny7788@gmail.com, golo062003@gmail.com"];
+const subscriberList = "krishan.kanahia@nextbigbox.in";
 const axios = require("axios");
 const fs = require("fs");
 const nodemailer = require("nodemailer");
