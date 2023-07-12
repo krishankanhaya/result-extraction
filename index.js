@@ -1,6 +1,6 @@
-const senderMail = "krishankanhaya0007@gmail.com";
-const appPassword = 'idvhjmtqlacqrajj';
-const subscriberList = "krishan.kanahia@nextbigbox.in";
+const senderMail = "primary-email@gmail.com"; // your primary email from which you send email
+const appPassword = 'app-password'; // generate app password form primary email
+const subscriberList = ['example1@gmail.com, example2@gmail.com, ']; // people in the form of array
 const axios = require("axios");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
