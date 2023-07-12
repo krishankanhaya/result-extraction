@@ -40,7 +40,7 @@ setInterval(async () => {
         port: 587,
         secure: false,
         auth: {
-          user: sendMail,
+          user: senderMail,
           pass: appPassword,
         },
       });
